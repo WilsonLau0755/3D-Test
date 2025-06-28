@@ -116,15 +116,6 @@ export class ModelComponent implements AfterViewInit, OnDestroy {
       const points = new THREE.Points(geometry, material);
       this.scene.add(points);
 
-      // 计算模型外球形，实现居中模型
-      // geometry.computeBoundingSphere();
-      // if (geometry.boundingSphere) {
-      //   const center = geometry.boundingSphere.center;
-      //   points.position.sub(center);
-      // }
-      // // 半径1.5倍距离，满足模型观看需要
-      // this.camera!.position.z = geometry.boundingSphere ?
-      //     geometry.boundingSphere.radius * 2 : 5;
       this.centerAndFrameModel(points);
 
       this.controls!.update();
@@ -142,18 +133,14 @@ export class ModelComponent implements AfterViewInit, OnDestroy {
   private loadGltfFile(url: string): void {
     const loader = new GLTFLoader();
     loader.load(url, (gltf) => {
-      console.log(gltf)
       this.scene.add(gltf.scene);
 
       this.centerAndFrameModel(gltf.scene);
 
-      this.controls!.target.copy(gltf.scene.position);
       this.controls!.update();
       this.loadProcess = -1;
     }, (xhr) => {
       // 加载进度回调
-      console.log(xhr)
-      console.log(this.loadProcess)
       this.loadProcess = Math.ceil(xhr.loaded / xhr.total * 100);
     },
     (error) => {
@@ -199,12 +186,10 @@ export class ModelComponent implements AfterViewInit, OnDestroy {
 
       this.centerAndFrameModel(obj);
 
-      this.controls!.target.copy(obj.position);
       this.controls!.update();
       this.loadProcess = -1;
     }, (xhr) => {
       // 加载进度回调
-      console.log(this.loadProcess)
       this.loadProcess = Math.ceil(xhr.loaded / xhr.total * 100);
     },
     (error) => {
