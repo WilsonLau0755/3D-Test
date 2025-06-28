@@ -114,13 +114,13 @@ export class ModelComponent implements AfterViewInit, OnDestroy {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(1, 1, 1);
     this.scene.add(directionalLight);
-
-    // // 添加网格辅助线
-    // const gridHelper = new THREE.GridHelper(10, 10, 0xcccccc, 0xcccccc);
-    // this.scene.add(gridHelper);
   }
 
   private loadPlyFile(url: string): void {
+    // 增加手动创建SparkRenderer，修复二次进入页面SparkRenderer未自动创建，具体原因未知。
+    const spark = new SparkRenderer({renderer: this.renderer!});
+    this.scene.add(spark);
+
     const loader = new SplatLoader();
     loader.loadAsync(url, (xhr) => {
       if (xhr.type === 'progress') {
