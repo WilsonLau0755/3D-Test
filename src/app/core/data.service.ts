@@ -16,7 +16,7 @@ export class DataService {
       title: '元素3D点云',
       description: '元素结构图是直观呈现原子内部构造的科学模型，它以原子核（含质子和中子）为中心，通过环绕的电子层及电子轨道分布清晰展示核外电子排布规律（如能级、轨道形状与电子自旋），同时标注元素关键参数（原子序数、电子数、质量数等），从而揭示元素的化学性质（如价电子决定反应活性）、物理特性（如电离能与电负性）及在周期表中的位置规律，为理解化学键形成、元素周期律、光谱现象乃至量子力学原理提供可视化基础，是化学、材料科学和核物理研究不可或缺的分析工具。',
       coverImageUrl: 'images/element.png',
-      modelUrl: 'models/3d.ply',
+      modelUrl: '3d.spz',
       modelType: ModelType.Ply,
       type: DeviceType.material,
     },
