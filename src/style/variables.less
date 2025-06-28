@@ -1,0 +1,50 @@
+
+// 颜色
+@color-danger: #FF4D4F;
+@color-light: #81838F;
+@color-primary: #1890FF;
+@color-warning: #F19D38;
+@color-success: #1AAD19;
+@color-white-light: #FAFAFA;
+
+// 基础间隔
+@spacer: 12px;
+@background-white: white;
+@background-normal: rgb(240, 242, 245);
+
+// 字体
+@font-base-color: rgba(0, 0, 0, 0.85);
+@font-attach-color: #999999;
+@font-reverse-color: #ffffff;
+@font-normal-size: 14px;
+@font-title-size: 16px;
+@font-attach-size: 12px;
+@font-bolder-weight: 600;
+
+.font-title {
+  font-size: @font-title-size;
+  color: @font-base-color;
+  font-weight: @font-bolder-weight;
+}
+.font-base {
+  font-size: @font-normal-size;
+  color: @font-base-color;
+}
+.font-attach {
+  font-size: @font-attach-size;
+  color: @font-attach-color;
+}
+
+// 边框
+@border-normal-radius: @spacer * 0.5;
+@border-color: rgba(128, 128, 128);
+@border-size: 1px;
+
+// 隐藏scroll-bar
+.none-scroll-bar {
+  overflow: -moz-hidden-unscrollable;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}

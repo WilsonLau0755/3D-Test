@@ -1,0 +1,30 @@
+<div #ViewContainer class="view-container"></div>
+
+<nz-modal [nzVisible]="isModelNotFounded" [nzCancelText]="null" [nzOkText]="null">
+  <ng-container *nzModalContent>
+    <nz-result nzStatus="404" nzTitle="模型未找到" nzSubTitle="对不起，暂未找到你所需要的模型文件，请返回重试。">
+      <div nz-result-extra>
+        <button nz-button nzType="primary" (click)="navigateBack()">返回列表</button>
+      </div>
+    </nz-result>
+  </ng-container>
+</nz-modal>
+
+<nz-modal [nzVisible]="isModelLoadFail" [nzCancelText]="null" [nzOkText]="null">
+  <ng-container *nzModalContent>
+    <nz-result nzStatus="error" nzTitle="模型加载失败" nzSubTitle="对不起，因未知原因模型加载失败，请重试。">
+      <div nz-result-extra>
+        <button nz-button nzType="primary" (click)="loadData()">重新加载</button>
+      </div>
+    </nz-result>
+  </ng-container>
+</nz-modal>
+
+@if (loadProcess >= 0 && loadProcess <= 100) {
+  <div class="loading-container">
+    <nz-space nzDirection="vertical">
+      <nz-progress *nzSpaceItem [nzPercent]="loadProcess" nzType="circle" [nzWidth]="70"></nz-progress>
+      <div class="tips" *nzSpaceItem>模型加载中</div>
+    </nz-space>
+  </div>
+}

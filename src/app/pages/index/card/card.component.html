@@ -1,0 +1,38 @@
+<div nz-row [nzGutter]="[24, 24]">
+  @for (item of list$ | async; track $index) {
+    <div nz-col [nzXs]="24" [nzMd]="hoverId === item.id ? 24 : 12" [nzLg]="hoverId === item.id ? 24 : 8" [nzXl]="hoverId === item.id ? 24 : 6">
+      <nz-card nzHoverable [nzBodyStyle]="{padding: 0}" [routerLink]="['./', item.id]" (mouseenter)="onMouseEnter(item.id)" (mouseout)="onMouseOut()">
+        <div [ngClass]="{'card__horizontal': hoverId === item.id}">
+          <div class="card__cover">
+            <img class="card__cover__img" alt="example" [src]="item.coverImageUrl" />
+            <nz-tag class="card__cover__tag" nzColor="blue" [nzBordered]="false">{{item.type | typePipe}}</nz-tag>
+          </div>
+          <div class="card__content">
+            <h2 class="card__content__title">{{item.title}}</h2>
+            <p class="card__content__content">{{item.description}}</p>
+            <nz-space nzSize="middle">
+              <div *nzSpaceItem class="card__content__attach">
+                <nz-icon nzType="eye" nzTheme="outline" />
+                {{123123 | number: '1.0-0'}}
+              </div>
+              <div *nzSpaceItem class="card__content__attach">
+                <nz-icon nzType="like" nzTheme="outline" />
+                {{1212 | number: '1.0-0'}}
+              </div>
+              <div *nzSpaceItem class="card__content__attach">
+                <nz-icon nzType="download" nzTheme="outline" />
+                {{1231 | number: '1.0-0'}}
+              </div>
+            </nz-space>
+          </div>
+        </div>
+      </nz-card>
+      <ng-template #coverTemplate>
+
+      </ng-template>
+    </div>
+  }
+  @if (!(list$ | async)?.length) {
+    <nz-empty nz-col nzSpan="24" nzNotFoundContent="未找到相关设备材料"></nz-empty>
+  }
+</div>

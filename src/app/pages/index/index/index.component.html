@@ -1,0 +1,19 @@
+<nz-layout [ngStyle]="{display: (isInChildRoute$ | async) ? 'none' : 'block'}">
+  <nz-header id="home">
+    <app-nav-bar></app-nav-bar>
+  </nz-header>
+  <nz-content>
+    <app-banner></app-banner>
+    <div class="content-padding">
+      <app-list id="list"></app-list>
+    </div>
+    <div class="content-padding">
+      <app-about id="about"></app-about>
+    </div>
+  </nz-content>
+  <nz-footer>
+    <app-footer></app-footer>
+  </nz-footer>
+</nz-layout>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+@import 'variables.less';
+
+nz-header {
+  padding-top: @spacer;
+  padding-bottom: @spacer;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+nz-footer {
+  background-color: #001529;
+}
+.content-padding {
+  padding: 0 50px;
+
+  &:nth-child(even) {
+    background-color: @background-normal;
+  }
+  &:nth-child(odd) {
+    background-color: @background-white;
+  }
+}

@@ -1,0 +1,7 @@
+<nz-carousel nzAutoPlay>
+  @for (item of banner$ | async; track $index) {
+    <div nz-carousel-content>
+      <img class="image" [src]="item.imageUrl" />
+    </div>
+  }
+</nz-carousel>

@@ -1,0 +1,31 @@
+@import '../index.less';
+@import 'variables.less';
+
+.nav-bar {
+  max-width: @page-max-w;
+  display: block;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  & > div {
+    height: 100%;
+  }
+}
+.logo {
+  height: 100%;
+  object-fit: contain;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & > nz-input-group {
+    margin-left: 100px;
+    border-radius: @border-normal-radius;
+  }
+}

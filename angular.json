@@ -29,11 +29,21 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
               }
             ],
             "styles": [
-              "src/styles.less"
+              "src/style/styles.less"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/style"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -91,7 +101,7 @@
               }
             ],
             "styles": [
-              "src/styles.less"
+              "src/style/styles.less"
             ],
             "scripts": []
           }

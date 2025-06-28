@@ -1,0 +1,64 @@
+<div >
+  <nz-space class="list" nzDirection="vertical" nzSize="large">
+    <div *nzSpaceItem class="list__title">
+      <h3 class="section-title">实验室设备材料</h3>
+      <p>以下是我们实验室的主要设备与材料列表，可通过分类标签或搜索框快速查找所需资源</p>
+    </div>
+
+    <!-- 筛选工具栏 -->
+    <div *nzSpaceItem>
+      <!-- 分类标签 -->
+      <div nz-flex nzJustify="space-between">
+        <nz-space>
+          @for (option of selectOptions; track $index) {
+            <button *nzSpaceItem nz-button [nzType]="selectionValue === option.value ? 'primary' : 'default'" nzShape="round" (click)="onSelectionChange(option.value)">{{option.label}}</button>
+          }
+        </nz-space>
+
+        <div>
+          <nz-input-group [nzPrefix]="IconTemplate">
+            <input nz-input [(ngModel)]="searchValue" id="name" name="name" placeholder="搜索" (ngModelChange)="onSearchChange()">
+          </nz-input-group>
+          <ng-template #IconTemplate><nz-icon nzType="search" nzTheme="outline" /></ng-template>
+        </div>
+      </div>
+    </div>
+
+    <!-- 设备卡片网格 -->
+    <div *nzSpaceItem>
+      <div nz-row [nzGutter]="[24, 24]">
+        @for (item of list$ | async; track $index) {
+          <div nz-col [nzXs]="24" [nzMd]="12" [nzLg]="8" [nzXl]="6">
+            <nz-card nzHoverable [nzCover]="coverTemplate" [routerLink]="['./', item.id]">
+              <h2 class="card__content__title">{{item.title}}</h2>
+              <p class="card__content__content">{{item.description}}</p>
+              <nz-space nzSize="middle">
+                <div *nzSpaceItem class="card__content__attach">
+                  <nz-icon nzType="eye" nzTheme="outline" />
+                  {{123123 | number: '1.0-0'}}
+                </div>
+                <div *nzSpaceItem class="card__content__attach">
+                  <nz-icon nzType="like" nzTheme="outline" />
+                  {{1212 | number: '1.0-0'}}
+                </div>
+                <div *nzSpaceItem class="card__content__attach">
+                  <nz-icon nzType="download" nzTheme="outline" />
+                  {{1231 | number: '1.0-0'}}
+                </div>
+              </nz-space>
+            </nz-card>
+            <ng-template #coverTemplate>
+              <div class="card__cover">
+                <img class="card__cover__img" alt="example" [src]="item.coverImageUrl" />
+                <nz-tag class="card__cover__tag" nzColor="blue" [nzBordered]="false">{{item.type | typePipe}}</nz-tag>
+              </div>
+            </ng-template>
+          </div>
+        }
+        @if (!(list$ | async)?.length) {
+          <nz-empty nz-col nzSpan="24" nzNotFoundContent="未找到相关设备材料"></nz-empty>
+        }
+      </div>
+    </div>
+  </nz-space>
+</div>

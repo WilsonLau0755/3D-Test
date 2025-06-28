@@ -1,0 +1,38 @@
+@import '../index.less';
+@import 'variables.less';
+
+.card {
+  &__cover {
+    position: relative;
+
+    &__tag {
+      position: absolute;
+      top: @spacer;
+      left: @spacer;
+    }
+    &__img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    padding: @spacer * 1.5;
+
+    &__title {
+      font-weight: 600;
+    }
+    &__content {
+      .font-attach;
+      font-size: 14px;
+      word-break: break-all;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    &__attach {
+      .font-attach;
+    }
+  }
+}

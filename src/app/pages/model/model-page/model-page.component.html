@@ -1,0 +1,33 @@
+<nz-layout>
+  <nz-header>
+    <div nz-flex nzAlign="center">
+      <button nz-button nzType="text" class="btn" (click)="navigateBack()">
+        <nz-icon nzType="left" nzTheme="outline" />返回
+      </button>
+
+      <span class="title">模型</span>
+    </div>
+  </nz-header>
+  <nz-content>
+    <article class="tips" nz-typography>
+      <h4 class="tips__title" nz-typography>操作指南</h4>
+      <div class="tips__item">
+        <img src="scroll.svg" />
+        <span nz-typography><strong>旋转视图</strong>：按住鼠标左键拖动</span>
+      </div>
+      <div class="tips__item">
+        <img src="resize.svg" />
+        <span nz-typography><strong>缩放视图</strong>：使用鼠标滚轮缩放</span>
+      </div>
+      <div class="tips__item">
+        <img src="move.svg" />
+        <span nz-typography><strong>平移视图</strong>：按住鼠标右键拖动</span>
+      </div>
+      <div class="tips__item">
+        <img src="refresh.svg" />
+        <span nz-typography><strong>重置视图</strong>：鼠标左键双击画面</span>
+      </div>
+    </article>
+    <!-- <app-model></app-model> -->
+  </nz-content>
+</nz-layout>

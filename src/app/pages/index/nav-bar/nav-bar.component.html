@@ -1,0 +1,22 @@
+<div class="nav-bar">
+  <img class="logo" src="logo.png" />
+
+  @if (isScreenSM$ | async) {
+    <!-- 移动端菜单按钮 -->
+    <button nz-button nzType="text">
+      <nz-icon nzType="menu" nzTheme="outline" />
+    </button>
+  } @else {
+    <div class="menu">
+      <!-- 桌面导航 -->
+      @for (tag of taps; track $index) {
+        <button nz-button nzType="link" nzSize="large" [routerLink]="['./']" [fragment]="tag.fragment">{{tag.title}}</button>
+      }
+      <!-- 搜索框 -->
+      <nz-input-group [nzPrefix]="IconTemplate">
+        <input nz-input [(ngModel)]="searchValue" id="name" name="name" placeholder="搜索">
+      </nz-input-group>
+      <ng-template #IconTemplate><nz-icon nzType="search" nzTheme="outline" /></ng-template>
+    </div>
+  }
+</div>

@@ -1,0 +1,71 @@
+@import 'variables.less';
+
+.btn {
+  color: @font-reverse-color;
+  flex: 0;
+}
+.title {
+  flex: auto;
+  .font-title;
+  color: @font-reverse-color;
+  text-align: center;
+}
+
+nz-layout {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+nz-header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-left: @spacer;
+  padding-right: @spacer;
+}
+nz-content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #252258 5%, #A91F23 50%, #252258 95%);
+}
+
+.tips {
+  padding: @spacer * 2;
+  border-radius: @spacer;
+  overflow: hidden;
+  color: @font-reverse-color;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: calc(64px + @spacer);
+  right: @spacer;
+
+  &__title {
+    color: @color-primary;
+    padding-bottom: @spacer * 0.5;
+    margin-bottom: @spacer * 0.5;
+    border-bottom: solid 1px @font-attach-color;
+  }
+  &__item {
+    @font-size: 14px;
+    font-size: @font-size;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: @spacer 0;
+
+    & > img {
+      width: @font-size;
+      height: @font-size;
+      margin-right: @spacer * 0.5;
+    }
+    & > span {
+      color: @font-reverse-color;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="footer">
+  <div nz-row nzAlign="top" [nzGutter]="[48, 48]">
+    <div class="lab" nz-col nzXs="24" nzMd="24" nzLg="6">
+      <img src="logo.png" />
+      <h2>***材料实验室</h2>
+      <p>致力于提供先进实验设备与材料资源，支持前沿科学研究。</p>
+      <div>
+        <img class="link-logo" src="github.svg" />
+        <img class="link-logo" src="wechat.svg" />
+        <img class="link-logo" src="alipay.svg" />
+      </div>
+    </div>
+
+    <div nz-col nzXs="12" nzMd="12" nzLg="6" class="link">
+      <h3>快速链接</h3>
+      <div>
+        <div class="link-item"><a href="#home">首页</a></div>
+        <div class="link-item"><a href="#list">设备材料</a></div>
+        <div class="link-item"><a href="#about">关于我们</a></div>
+        <div class="link-item"><a href="#">联系我们</a></div>
+      </div>
+    </div>
+
+    <div nz-col nzXs="12" nzMd="12" nzLg="6" class="link">
+      <h3>设备分类</h3>
+      <div>
+        <div class="link-item"><a href="#">分析仪器</a></div>
+        <div class="link-item"><a href="#">合成设备</a></div>
+        <div class="link-item"><a href="#">测试设备</a></div>
+        <div class="link-item"><a href="#">耗材材料</a></div>
+      </div>
+    </div>
+
+    <div nz-col nzXs="24" nzMd="24" nzLg="6" class="subscribe">
+      <h3>订阅更新</h3>
+      <p>订阅我们的通讯，获取最新设备更新和科研动态</p>
+      <nz-input-group nzSearch [nzAddOnAfter]="suffixButton">
+        <input type="text" nz-input placeholder="input search text" />
+      </nz-input-group>
+      <ng-template #suffixButton>
+        <button nz-button nzType="primary" nzSearch><nz-icon nzType="send" nzTheme="outline" />订阅</button>
+      </ng-template>
+      <p>我们尊重您的隐私，不会向第三方分享您的信息</p>
+    </div>
+  </div>
+
+  <div class="icp">© 2025 XX实验室. 保留所有权利.</div>
+</div>

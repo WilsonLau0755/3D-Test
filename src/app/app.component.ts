@@ -4,9 +4,6 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+  template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'material-lab';
-}
+export class AppComponent {}
